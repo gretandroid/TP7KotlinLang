@@ -1,21 +1,27 @@
 package education.cccp.basics
 
+import education.cccp.basics.Utils.DATE_PATTERN
+import education.cccp.basics.Utils.howOldAreYou
+import education.cccp.basics.Utils.randomSalaryGenerator
 import java.time.LocalDate
 import java.time.LocalDate.parse
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToLong
 import kotlin.random.Random.Default.nextDouble
 
+object Utils {
+    fun howOldAreYou(date: LocalDate) = LocalDate.now().year - date.year
 
-fun howOldAreYou(date: LocalDate) = LocalDate.now().year - date.year
+    fun randomSalaryGenerator() = nextDouble(
+        from = 0.0,
+        until = 100000.0
+    ).roundToLong().toDouble()
 
-fun randomSalaryGenerator() = nextDouble(
-    from = 0.0,
-    until = 100000.0
-).roundToLong().toDouble()
+    const val DATE_PATTERN = "dd/MM/yyyy"
+}
 
 fun main() {
-    val dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+    val dateFormat = DateTimeFormatter.ofPattern(DATE_PATTERN)
     val date1 = parse("02/11/1975", dateFormat)
     val date3 = parse("03/12/1976", dateFormat)
     val date4 = parse("04/01/1977", dateFormat)
@@ -63,7 +69,7 @@ fun main() {
         age = howOldAreYou(date4),
         salary = randomSalaryGenerator(),
         vehicules = mutableListOf(
-            Vehicule(5, "blue"),
+            Vehicule(numero = 5, couleur = "blue"),
             Vehicule(6, "purple")
         )
     )
@@ -86,9 +92,9 @@ fun main() {
         firstName = "Carla",
         lastName = "Coe",
         birthDate = date2,
-        age= howOldAreYou(date2),
-        salary= randomSalaryGenerator(),
-        vehicules=mutableListOf(
+        age = howOldAreYou(date2),
+        salary = randomSalaryGenerator(),
+        vehicules = mutableListOf(
             Vehicule(7, "white"),
             Vehicule(8, "black")
         ),
