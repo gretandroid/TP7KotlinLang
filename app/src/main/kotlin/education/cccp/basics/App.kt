@@ -1,11 +1,12 @@
 package education.cccp.basics
 
-import education.cccp.basics.Utils.DATE_PATTERN
+import education.cccp.basics.Utils.dateFormat
 import education.cccp.basics.Utils.howOldAreYou
 import education.cccp.basics.Utils.randomSalaryGenerator
 import java.time.LocalDate
 import java.time.LocalDate.parse
 import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeFormatter.ofPattern
 import kotlin.math.roundToLong
 import kotlin.random.Random.Default.nextDouble
 
@@ -18,10 +19,11 @@ object Utils {
     ).roundToLong().toDouble()
 
     const val DATE_PATTERN = "dd/MM/yyyy"
+    val dateFormat: DateTimeFormatter = ofPattern(DATE_PATTERN)
+
 }
 
 fun main() {
-    val dateFormat = DateTimeFormatter.ofPattern(DATE_PATTERN)
     val date1 = parse("02/11/1975", dateFormat)
     val date3 = parse("03/12/1976", dateFormat)
     val date4 = parse("04/01/1977", dateFormat)
@@ -34,8 +36,8 @@ fun main() {
         age = howOldAreYou(date1),
         salary = randomSalaryGenerator(),
         vehicules = mutableListOf(
-            Vehicule(1, "red"),
-            Vehicule(2, "black")
+            Vehicule(numero = 1, couleur = "red"),
+            Vehicule(numero = 2, couleur = "black")
         )
     )
     val person2 = Person(
@@ -57,8 +59,8 @@ fun main() {
         age = howOldAreYou(date3),
         salary = randomSalaryGenerator(),
         vehicules = mutableListOf(
-            Vehicule(3, "green"),
-            Vehicule(4, "yellow")
+            Vehicule(numero = 3, couleur = "green"),
+            Vehicule(numero = 4, couleur = "yellow")
         )
     )
     val person4 = Person(
@@ -70,7 +72,7 @@ fun main() {
         salary = randomSalaryGenerator(),
         vehicules = mutableListOf(
             Vehicule(numero = 5, couleur = "blue"),
-            Vehicule(6, "purple")
+            Vehicule(numero = 6, couleur = "purple")
         )
     )
 
@@ -87,7 +89,7 @@ fun main() {
 
 
     val date2 = parse("05/02/1978", dateFormat)
-    val fooEmployee: Employee = Employee(
+    val fooEmployee = Employee(
         id = 4,
         firstName = "Carla",
         lastName = "Coe",
@@ -95,8 +97,8 @@ fun main() {
         age = howOldAreYou(date2),
         salary = randomSalaryGenerator(),
         vehicules = mutableListOf(
-            Vehicule(7, "white"),
-            Vehicule(8, "black")
+            Vehicule(numero = 7, couleur = "white"),
+            Vehicule(numero = 8, couleur = "black")
         ),
         diplome = "1",
         statutCadre = false,
