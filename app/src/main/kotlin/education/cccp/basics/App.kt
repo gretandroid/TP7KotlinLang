@@ -75,7 +75,10 @@ fun main() {
     persons.forEach { println(it) }
 
     if (person1 == person2) println("person1 equals person2")
-    if (person1 == person3) println("person1 equals person2")
-    if (person1 == person4) println("person1 equals person2")
-    if (person2 == person4) println("person1 equals person2")
+    if (person1 == person3) println("person1 equals person3")
+    if (person1 == person4) println("person1 equals person4")
+    if (person2 == person4) println("person2 equals person4")
+
+
+
 }
