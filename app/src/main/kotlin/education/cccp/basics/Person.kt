@@ -10,9 +10,23 @@ open class Person(
     open val age: Int = 0,
     open val salary: Double = 0.0,
     open val vehicules: List<Vehicule> = mutableListOf()
-){
-    override fun toString(): String {
-        return "Person(id=$id, lastName='$lastName', firstName='$firstName', birthDate=$birthDate, age=$age, salary=$salary, vehicules=$vehicules)"
+) {
+    override fun toString(): String = buildString {
+        append("Person(id=")
+        append(id)
+        append(", lastName='")
+        append(lastName)
+        append("', firstName='")
+        append(firstName)
+        append("', birthDate=")
+        append(birthDate)
+        append(", age=")
+        append(age)
+        append(", salary=")
+        append(salary)
+        append(", vehicules=")
+        append(vehicules)
+        append(")")
     }
 
     override fun equals(other: Any?): Boolean {
