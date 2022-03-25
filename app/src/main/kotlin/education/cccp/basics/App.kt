@@ -11,17 +11,13 @@ fun main() {
         id = 1,
         firstName = "John",
         lastName = "Doe",
-        birthDate = parse("02/11/1975", dateFormat),
-        age = null,
-        salary = null
+        birthDate = parse("02/11/1975", dateFormat)
     )
     val person2 = Person(
         id = 1,
         firstName = "John",
         lastName = "Doe",
-        birthDate = parse("02/11/1975", dateFormat),
-        age = null,
-        salary = null
+        birthDate = parse("02/11/1975", dateFormat)
     )
 
 
@@ -29,17 +25,13 @@ fun main() {
         id = 2,
         firstName = "Harry",
         lastName = "Hoe",
-        birthDate = parse("03/12/1976", dateFormat),
-        age = null,
-        salary = null
+        birthDate = parse("03/12/1976", dateFormat)
     )
     val person4 = Person(
         id = 3,
         firstName = "Jackie",
         lastName = "Joe",
-        birthDate = parse("04/01/1977", dateFormat),
-        age = null,
-        salary = null
+        birthDate = parse("04/01/1977", dateFormat)
     )
 
     val persons = mutableListOf(
