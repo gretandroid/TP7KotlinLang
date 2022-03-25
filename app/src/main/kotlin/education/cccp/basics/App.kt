@@ -80,5 +80,22 @@ fun main() {
     if (person2 == person4) println("person2 equals person4")
 
 
+    val date2 = parse("05/02/1978", dateFormat)
+    val fooEmployee: Employee = Employee(
+        id = 4,
+        firstName = "Carla",
+        lastName = "Coe",
+        birthDate = date2,
+        age= howOldAreYou(date2),
+        salary= randomSalaryGenerator(),
+        vehicules=mutableListOf(
+            Vehicule(7, "white"),
+            Vehicule(8, "black")
+        ),
+        diplome = "1",
+        statutCadre = false,
+        fonction = "fonction1"
+    )
+    println(fooEmployee)
 
 }

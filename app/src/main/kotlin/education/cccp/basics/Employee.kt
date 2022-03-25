@@ -12,5 +12,8 @@ data class Employee(
     override val id: Int,
     override val lastName: String,
     override val firstName: String,
-    override val birthDate: LocalDate
+    override val birthDate: LocalDate,
+    override val age: Int,
+    override val salary: Double,
+    override val vehicules: MutableList<Vehicule>
 ) : Person(id, lastName, firstName, birthDate)

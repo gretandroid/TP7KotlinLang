@@ -7,9 +7,9 @@ open class Person(
     open val lastName: String,
     open val firstName: String,
     open val birthDate: LocalDate,
-    val age: Int = 0,
-    val salary: Double = 0.0,
-    val vehicules: List<Vehicule> = mutableListOf()
+    open val age: Int = 0,
+    open val salary: Double = 0.0,
+    open val vehicules: List<Vehicule> = mutableListOf()
 ){
     override fun toString(): String {
         return "Person(id=$id, lastName='$lastName', firstName='$firstName', birthDate=$birthDate, age=$age, salary=$salary, vehicules=$vehicules)"
