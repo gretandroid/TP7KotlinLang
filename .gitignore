@@ -6,3 +6,4 @@ build
 .idea
 /.~lock.exercicekotlin.odt#
 app/bin
+local.properties
