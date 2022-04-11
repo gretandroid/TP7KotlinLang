@@ -10,17 +10,20 @@ import java.time.format.DateTimeFormatter.ofPattern
 import kotlin.math.roundToLong
 import kotlin.random.Random.Default.nextDouble
 
-object Utils {
-    fun howOldAreYou(date: LocalDate) = LocalDate.now().year - date.year
+private const val DATE_PATTERN = "dd/MM/yyyy"
 
-    fun randomSalaryGenerator() = nextDouble(
+object Utils {
+    @JvmStatic
+    fun howOldAreYou(date: LocalDate): Int = LocalDate.now().year - date.year
+
+    @JvmStatic
+    fun randomSalaryGenerator(): Double = nextDouble(
         from = 0.0,
-        until = 100000.0
+        until = 10000.0
     ).roundToLong().toDouble()
 
-    const val DATE_PATTERN = "dd/MM/yyyy"
-    val dateFormat: DateTimeFormatter = ofPattern(DATE_PATTERN)
-
+    @JvmStatic
+    val dateFormat: DateTimeFormatter by lazy { ofPattern(DATE_PATTERN) }
 }
 
 fun main() {
